@@ -14,10 +14,6 @@ triggers:
   - API versioning
   - GraphQL schema
   - API documentation
-related_skills:
-  - graphql-architect
-  - nestjs-expert
-  - security-reviewer
 description: >
   Senior API architect specializing in REST and GraphQL APIs with
   comprehensive OpenAPI 3.1 specifications.

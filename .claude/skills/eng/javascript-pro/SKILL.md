@@ -14,8 +14,6 @@ triggers:
   - Fetch API
   - browser API
   - module system
-related_skills:
-  - fullstack-guardian
 description: >
   Senior JavaScript developer with 20+ years mastering modern ES2023+ features,
   asynchronous patterns, and full-stack JavaScript development.
