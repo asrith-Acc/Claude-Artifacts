@@ -1,25 +1,35 @@
 # Daily Jira Pending Check
 
-Run my daily Jira pending check and give me a clear summary of everything that needs my attention today.
+Run a daily Jira pending check for whoever is currently running this command and give them a clear summary of everything that needs their attention today.
 
-## What to check
+## Step 1 — Identify the Current User
 
-Using the Jira MCP tools, do the following:
+Before doing anything else, use the Atlassian MCP to call the "get current user" endpoint to retrieve:
+- The current user's **display name**
+- The current user's **account ID**
 
-### 1. Assigned & Pending Issues
+Use these values dynamically in all queries below. Do NOT hardcode any name or account ID.
+
+## Step 2 — What to Check
+
+Using the Jira MCP tools, do the following for the current user:
+
+### Assigned & Pending Issues
 Search for all Jira issues where:
-- Assignee = Sagar Gupta (account ID: `712020:f9c9a014-44c1-47bf-81bd-671464f5021e`)
+- Assignee = current user's account ID
 - Status is NOT in: Done, Deployed, Closed, Released, Resolved
 
-### 2. Unacknowledged Mentions
+### Unacknowledged Mentions
 Search for Jira issues where:
-- A comment mentions `@Sagar Gupta`
-- The last comment on that issue mentioning Sagar was NOT written by Sagar himself
-(i.e., someone is waiting for his response)
+- A comment mentions the current user by name or account ID
+- The last comment mentioning them was NOT written by them
+(i.e., someone is waiting for their response)
 
-## Output Format
+## Step 3 — Output Format
 
-Present the results in two clear sections:
+Start with a greeting using the current user's first name.
+
+Then present results in two clear sections:
 
 **📌 Assigned & Pending (X items)**
 For each issue: ticket key (as a link), summary, status, project name, priority, last updated date
